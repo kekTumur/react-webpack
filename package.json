@@ -1,0 +1,11 @@
+{
+  "name": "build-sandbox",
+  "version": "1.0.0",
+  "description": "Sandbox to play with react tools",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Kalim",
+  "license": "ISC"
+}
