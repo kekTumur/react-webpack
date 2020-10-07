@@ -31,3 +31,11 @@
         }]],
     "plugins": ["@babel/proposal-class-properties"]
     }
+9. Вместо babelrc можно поместить их в package.json
+ "browserslist": [
+    "> 0.3%"
+  ]
+10. так же можно хранить версии браузеров в файле .browserslistrc
+    last 2 chrome versions
+    last 2 firefox versions
+    last 1 edge versions
