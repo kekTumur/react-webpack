@@ -1,9 +1,9 @@
 class App {
-    run() {
+    run = async () => {
         const name = 'World';
         console.log(`Hello ${name}`);
     }
 }
 
 const app = new App();
-app.run();
+app.run().then(() => console.log('done'));
