@@ -39,3 +39,16 @@
     last 2 chrome versions
     last 2 firefox versions
     last 1 edge versions
+11. 
+    npm i core-js
+12. код добавляющий глобальную функцию если ее еще нет в браузере
+    {
+    "presets": [["@babel/env",
+        {
+            "corejs": 3,
+            "useBuiltIns": "usage",
+            "debug": true,
+            "modules": false
+        }]],
+    "plugins": ["@babel/proposal-class-properties"]
+    }
