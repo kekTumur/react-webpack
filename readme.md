@@ -7,4 +7,27 @@
 6. Можно миксовать плагины и пресеты
     "presets": ["@babel/env"],
     "plugins": ["@babel/proposal-class-properties"]
-7. 
+7. Вторым аргументом в presets выступает target, который обновляет код в зависимости от поддержки браузеров, указанных в массиве
+   {
+    "presets": [["@babel/env",
+        {
+            "targets": {
+                "edge": 18,
+                "chrome": 74
+            }
+        }]],
+    "plugins": ["@babel/proposal-class-properties"]
+    }
+8. 
+    {
+    "presets": [["@babel/env",
+        {
+            "debug": true,
+            "targets": [  
+                "> 0.3%",  // более 0.3 процента используемых браузеров
+                "not ie > 0",
+                "last 2 chrome versions" // или так
+            ]
+        }]],
+    "plugins": ["@babel/proposal-class-properties"]
+    }
