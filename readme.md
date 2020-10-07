@@ -52,3 +52,17 @@
         }]],
     "plugins": ["@babel/proposal-class-properties"]
     }
+13. npm i react react-dom
+14. npm i --save-dev @babel/preset-react
+15. 
+    {
+    "presets": [["@babel/env",
+        {
+            "corejs": 3,
+            "useBuiltIns": "usage",
+            "debug": true,
+            "modules": false
+        }],
+    "@babel/react"],
+    "plugins": ["@babel/proposal-class-properties"]
+    }
