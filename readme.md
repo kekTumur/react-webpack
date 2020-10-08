@@ -66,3 +66,51 @@
     "@babel/react"],
     "plugins": ["@babel/proposal-class-properties"]
     }
+
+16. npm i --save-dev webpack webpack-cli
+17. npx webpack // запуск
+18. npx webpack --mode development // установка режима
+19. можно добавить файл конфига
+    module.exports = {
+        mode: "production"
+    };
+20. в файле пакадже джейсон
+    "scripts": {
+        "start": "webpack",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+21. npm i --save-dev file-loader // лоадер
+22. Теперь мы можем импортировать картинки в формате пнг
+    module.exports = {
+    mode: "production",
+
+    module: {
+        rules: [
+            {
+                test: /\.png$/,
+                use: [ { loader: 'file-loader' } ]
+            }
+        ]
+    }
+};
+23. 
+    module.exports = {
+    mode: "production",
+
+    module: {
+        rules: [
+            {
+                test: /\.png$/,
+                use: [ 
+                    { 
+                        loader: 'file-loader',
+                        options: {
+                            outputPath: 'images',
+                            name: '[name]-[sha1:hash:7].[ext]'
+                        }
+                    }
+                 ]
+            }
+        ]
+    }
+};

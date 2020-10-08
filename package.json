@@ -4,6 +4,7 @@
   "description": "Sandbox to play with react tools",
   "main": "index.js",
   "scripts": {
+    "start": "webpack",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Kalim",
@@ -16,7 +17,10 @@
     "@babel/plugin-transform-classes": "^7.10.4",
     "@babel/plugin-transform-template-literals": "^7.10.5",
     "@babel/preset-env": "^7.11.5",
-    "@babel/preset-react": "^7.10.4"
+    "@babel/preset-react": "^7.10.4",
+    "file-loader": "^6.1.0",
+    "webpack": "^4.44.2",
+    "webpack-cli": "^3.3.12"
   },
   "dependencies": {
     "core-js": "^3.6.5",
