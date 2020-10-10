@@ -1,10 +1,8 @@
-import Log from './log';
-import Calc from './calc';
-import img from './bird.png';
+import React from 'react'
+import ReactDOM from 'react-dom'
+import bird from './bird.png';
+import './main.scss';
 
-const calc = new Calc();
-const log = new Log();
+const App = () => <p><img src={bird} /></p>;
 
-const el = document.createElement('img');
-el.src = img;
-document.body.appendChild(el);
+ReactDOM.render(<App />, document.querySelector('#root'));

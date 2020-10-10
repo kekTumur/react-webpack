@@ -114,3 +114,106 @@
         ]
     }
 };
+24. 
+    module.exports = {
+    mode: "production",
+
+    module: {
+        rules: [
+            // Loading fonts
+            {
+                test: /\.(png|jpg|jpeg|gif|ico)$/,
+                use: [ 
+                    { 
+                        loader: 'file-loader',
+                        options: {
+                            outputPath: 'images',
+                            name: '[name]-[sha1:hash:7].[ext]'
+                        }
+                    }
+                 ]
+            },
+            // Loading fonts
+            {
+                test: /\.(ttf|otf|eot|woff|woff2)$/,
+                use: [ 
+                    { 
+                        loader: 'file-loader',
+                        options: {
+                            outputPath: 'images',
+                            name: '[name].[ext]'
+                        }
+                    }
+                 ]
+            }
+        ]
+    }
+};
+
+25. npm i --save-dev babel-loader // лоадер вебпак бабель
+26. {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        use: [
+            {
+                loader: 'babel-loader'
+            }
+        ]
+    },
+
+27. npm i --save-dev css-loader
+26. npm i --save-dev style-loader
+    {
+        test: /\.css$/,
+        exclude: /node_modules/,
+        use: [
+            { loader: 'style-loader'},
+            { loader: 'css-loader'}
+            
+        ]
+    },
+27. npm i --save-dev node-sass sass-loader
+    {
+        test: /\.(s[ca]ss)$/,
+        exclude: /node_modules/,
+        use: [
+            { loader: 'style-loader'},
+            { loader: 'css-loader'},
+            { loader: 'sass-loader'}
+        ]
+    },
+
+import './main.scss'; // index.js
+
+28. Упрощенная запись
+    {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        loader: 'babel-loader'
+    },
+
+    {
+        test: /\.css$/,
+        exclude: /node_modules/,
+        use: ['style-loader', 'css-loader']
+    },
+
+    {
+        test: /\.(s[ca]ss)$/,
+        exclude: /node_modules/,
+        use: [ 'style-loader', 'css-loader', 'sass-loader' ]
+    },
+
+29. const HtmlWebpackPlugin = require('html-webpack-plugin');
+    const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+
+    plugins: [
+        new HtmlWebpackPlugin({
+            template: 'src/index.html',
+            title: 'Webpack',
+            buildTime: new Date().toISOString()
+        }),
+        new MiniCssExtractPlugin({
+            filename: 'main-[hash:8].css'
+        })
+    ]
